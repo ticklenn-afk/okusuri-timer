@@ -5,12 +5,14 @@
 @tailwind utilities;
 
 :root {
-  color-scheme: light;
+  color-scheme: light only;
+  forced-color-adjust: none;
 }
 
 * {
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
+  forced-color-adjust: none;
 }
 
 body {
@@ -19,9 +21,20 @@ body {
   font-weight: 700;
   background: linear-gradient(160deg,
     #FFCAF2 0%, #FFE8F8 18%, #EEE0FF 42%, #DCF0FF 70%, #C0E8FF 100%
-  );
+  ) !important;
   min-height: 100svh;
   min-height: -webkit-fill-available;
+}
+
+/* ダークモード強制無効化 */
+@media (prefers-color-scheme: dark) {
+  :root { color-scheme: light only; }
+  body {
+    background: linear-gradient(160deg,
+      #FFCAF2 0%, #FFE8F8 18%, #EEE0FF 42%, #DCF0FF 70%, #C0E8FF 100%
+    ) !important;
+    color: #333 !important;
+  }
 }
 html  { height: -webkit-fill-available; }
 #root {
