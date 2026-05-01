@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+
+    <!-- =============================================
+         基本設定
+    ============================================== -->
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no" />
+    <title>おくすりタイマー 💊</title>
+    <meta name="description" content="かわいいキャラクターがお薬の時間を教えてくれるタイマーアプリ" />
+
+    <!-- =============================================
+         ファビコン
+    ============================================== -->
+    <link rel="icon"            type="image/png" href="/okusuri-timer/favicon-32.png" sizes="32x32" />
+    <link rel="icon"            type="image/png" href="/okusuri-timer/favicon-16.png" sizes="16x16" />
+    <link rel="icon"            type="image/svg+xml" href="/okusuri-timer/icon.svg" />
+    <link rel="shortcut icon"   href="/okusuri-timer/favicon.png" />
+
+    <!-- =============================================
+         PWA manifest
+    ============================================== -->
+    <link rel="manifest" href="/okusuri-timer/manifest.json" />
+
+    <!-- =============================================
+         Android / Chrome テーマカラー（パステルピンク）
+    ============================================== -->
+    <meta name="theme-color" content="#FFD6EC"
+      media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#FFD6EC"
+      media="(prefers-color-scheme: dark)" />
+
+    <!-- =============================================
+         iOS Safari / iPhone ホーム画面追加の設定
+    ============================================== -->
+
+    <!-- ① スタンドアロン（全画面）モードを有効化 -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <!-- ② ステータスバーのスタイル
+         "default"          → 白背景にダークテキスト（＝ theme-color が効く）
+         "black"            → 黒背景に白テキスト
+         "black-translucent"→ アプリコンテンツの下に重ねる（全画面になるがズレる）
+         パステルピンクのステータスバーには "default" + theme-color が最適 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+
+    <!-- ③ ホーム画面のアプリ名 -->
+    <meta name="apple-mobile-web-app-title" content="おくすり" />
+
+    <!-- ④ iPhone 用 apple-touch-icon（ホーム画面アイコン） -->
+    <link rel="apple-touch-icon" href="/okusuri-timer/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/okusuri-timer/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/okusuri-timer/icon-192.png" />
+    <link rel="apple-touch-icon" sizes="167x167" href="/okusuri-timer/icon-192.png" />
+
+    <!-- =============================================
+         iOS スプラッシュスクリーン（起動画面）
+         ※ iPhone の画面サイズごとに設定
+         背景色はパステルピンク #FFD6EC に合わせてある
+    ============================================== -->
+
+    <!-- iPhone 16 Pro Max (430×932) -->
+    <link rel="apple-touch-startup-image"
+      href="/okusuri-timer/splashes/splash-1290x2796.png"
+      media="(device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" />
+
+    <!-- iPhone 16 Pro / 15 Pro / 14 Pro (393×852) -->
+    <link rel="apple-touch-startup-image"
+      href="/okusuri-timer/splashes/splash-1179x2556.png"
+      media="(device-width: 393px) and (device-height: 852px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" />
+
+    <!-- iPhone 15 / 14 / 13 / 12 (390×844) -->
+    <link rel="apple-touch-startup-image"
+      href="/okusuri-timer/splashes/splash-1170x2532.png"
+      media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" />
+
+    <!-- iPhone SE (375×667) -->
+    <link rel="apple-touch-startup-image"
+      href="/okusuri-timer/splashes/splash-750x1334.png"
+      media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" />
+
+    <!-- =============================================
+         OGP（SNS シェア用）
+    ============================================== -->
+    <meta property="og:type"        content="website" />
+    <meta property="og:title"       content="おくすりタイマー 💊" />
+    <meta property="og:description" content="かわいいキャラクターがお薬の時間を教えてくれるタイマーアプリ" />
+    <meta property="og:image"       content="/okusuri-timer/icon-512.png" />
+
+    <script type="module" crossorigin src="/okusuri-timer/assets/index-BEAPkszg.js"></script>
+    <link rel="stylesheet" crossorigin href="/okusuri-timer/assets/index-Duk9Klck.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
