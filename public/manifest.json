@@ -1,0 +1,67 @@
+{
+  "name": "おくすりタイマー",
+  "short_name": "おくすり",
+  "description": "かわいいキャラクターがお薬の時間を教えてくれるタイマーアプリ",
+  "lang": "ja",
+  "dir": "ltr",
+
+  "start_url": "/",
+  "scope": "/",
+  "id": "/",
+
+  "display": "standalone",
+  "display_override": ["standalone", "minimal-ui"],
+
+  "orientation": "portrait",
+
+  "theme_color": "#FFD6EC",
+  "background_color": "#FFD6EC",
+
+  "categories": ["health", "lifestyle", "utilities"],
+
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-maskable-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+
+  "screenshots": [],
+
+  "shortcuts": [
+    {
+      "name": "服薬を記録する",
+      "short_name": "記録",
+      "description": "今すぐ服薬を記録",
+      "url": "/?action=record",
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "お薬を追加する",
+      "short_name": "お薬追加",
+      "description": "新しいお薬を登録",
+      "url": "/?action=add",
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
+    }
+  ]
+}
