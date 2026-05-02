@@ -5,7 +5,7 @@
 @tailwind utilities;
 
 :root {
-  color-scheme: only light;
+  color-scheme: light dark;
   forced-color-adjust: none;
 }
 
@@ -21,20 +21,46 @@ body {
   font-weight: 700;
   background: linear-gradient(160deg,
     #FFCAF2 0%, #FFE8F8 18%, #EEE0FF 42%, #DCF0FF 70%, #C0E8FF 100%
-  ) !important;
+  ) fixed !important;
+  color: #333 !important;
   min-height: 100svh;
   min-height: -webkit-fill-available;
 }
 
-/* ダークモード強制無効化 */
+/* ダークモードでも常にパステルカラーを維持する */
 @media (prefers-color-scheme: dark) {
-  :root { color-scheme: only light; }
+  html {
+    background: #FFCAF2 !important;
+  }
   body {
     background: linear-gradient(160deg,
       #FFCAF2 0%, #FFE8F8 18%, #EEE0FF 42%, #DCF0FF 70%, #C0E8FF 100%
-    ) !important;
+    ) fixed !important;
     color: #333 !important;
   }
+  /* カード類を明示的に上書き */
+  .glass-card {
+    background: rgba(255,255,255,.92) !important;
+    color: #333 !important;
+  }
+  .glass-pink {
+    background: rgba(255,238,250,.94) !important;
+    color: #333 !important;
+  }
+  .glass-purple {
+    background: rgba(247,240,255,.94) !important;
+    color: #333 !important;
+  }
+  .glass-blue {
+    background: rgba(232,247,255,.94) !important;
+    color: #333 !important;
+  }
+  /* テキスト色 */
+  .kawaii-title  { color: #D63FAA !important; }
+  .kawaii-h2     { color: #7C3AED !important; }
+  .kawaii-label  { color: #D63FAA !important; }
+  .kawaii-label-blue   { color: #1D6FCC !important; }
+  .kawaii-label-purple { color: #6D28D9 !important; }
 }
 html  { height: -webkit-fill-available; }
 #root {
