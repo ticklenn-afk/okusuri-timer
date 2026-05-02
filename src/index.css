@@ -5,7 +5,7 @@
 @tailwind utilities;
 
 :root {
-  color-scheme: light only;
+  color-scheme: only light;
   forced-color-adjust: none;
 }
 
@@ -28,7 +28,7 @@ body {
 
 /* ダークモード強制無効化 */
 @media (prefers-color-scheme: dark) {
-  :root { color-scheme: light only; }
+  :root { color-scheme: only light; }
   body {
     background: linear-gradient(160deg,
       #FFCAF2 0%, #FFE8F8 18%, #EEE0FF 42%, #DCF0FF 70%, #C0E8FF 100%
