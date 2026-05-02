@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ja">
+<html lang="ja" style="color-scheme: only light;">
   <head>
     <meta charset="UTF-8" />
 
@@ -8,21 +8,25 @@
     ============================================== -->
     <meta name="viewport"
       content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no" />
+    <meta name="color-scheme" content="only light" />
+    <style>
+      html, body { color-scheme: only light !important; }
+    </style>
     <title>おくすりタイマー 💊</title>
     <meta name="description" content="かわいいキャラクターがお薬の時間を教えてくれるタイマーアプリ" />
 
     <!-- =============================================
          ファビコン
     ============================================== -->
-    <link rel="icon"            type="image/png" href="/okusuri-timer/favicon-32.png" sizes="32x32" />
-    <link rel="icon"            type="image/png" href="/okusuri-timer/favicon-16.png" sizes="16x16" />
-    <link rel="icon"            type="image/svg+xml" href="/okusuri-timer/icon.svg" />
-    <link rel="shortcut icon"   href="/okusuri-timer/favicon.png" />
+    <link rel="icon"            type="image/png" href="/favicon-32.png" sizes="32x32" />
+    <link rel="icon"            type="image/png" href="/favicon-16.png" sizes="16x16" />
+    <link rel="icon"            type="image/svg+xml" href="/icon.svg" />
+    <link rel="shortcut icon"   href="/favicon.png" />
 
     <!-- =============================================
          PWA manifest
     ============================================== -->
-    <link rel="manifest" href="/okusuri-timer/manifest.json" />
+    <link rel="manifest" href="/manifest.json" />
 
     <!-- =============================================
          Android / Chrome テーマカラー（パステルピンク）
@@ -50,10 +54,10 @@
     <meta name="apple-mobile-web-app-title" content="おくすり" />
 
     <!-- ④ iPhone 用 apple-touch-icon（ホーム画面アイコン） -->
-    <link rel="apple-touch-icon" href="/okusuri-timer/apple-touch-icon.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/okusuri-timer/apple-touch-icon.png" />
-    <link rel="apple-touch-icon" sizes="152x152" href="/okusuri-timer/icon-192.png" />
-    <link rel="apple-touch-icon" sizes="167x167" href="/okusuri-timer/icon-192.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/icon-192.png" />
+    <link rel="apple-touch-icon" sizes="167x167" href="/icon-192.png" />
 
     <!-- =============================================
          iOS スプラッシュスクリーン（起動画面）
@@ -63,22 +67,22 @@
 
     <!-- iPhone 16 Pro Max (430×932) -->
     <link rel="apple-touch-startup-image"
-      href="/okusuri-timer/splashes/splash-1290x2796.png"
+      href="/splashes/splash-1290x2796.png"
       media="(device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" />
 
     <!-- iPhone 16 Pro / 15 Pro / 14 Pro (393×852) -->
     <link rel="apple-touch-startup-image"
-      href="/okusuri-timer/splashes/splash-1179x2556.png"
+      href="/splashes/splash-1179x2556.png"
       media="(device-width: 393px) and (device-height: 852px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" />
 
     <!-- iPhone 15 / 14 / 13 / 12 (390×844) -->
     <link rel="apple-touch-startup-image"
-      href="/okusuri-timer/splashes/splash-1170x2532.png"
+      href="/splashes/splash-1170x2532.png"
       media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" />
 
     <!-- iPhone SE (375×667) -->
     <link rel="apple-touch-startup-image"
-      href="/okusuri-timer/splashes/splash-750x1334.png"
+      href="/splashes/splash-750x1334.png"
       media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" />
 
     <!-- =============================================
@@ -87,12 +91,17 @@
     <meta property="og:type"        content="website" />
     <meta property="og:title"       content="おくすりタイマー 💊" />
     <meta property="og:description" content="かわいいキャラクターがお薬の時間を教えてくれるタイマーアプリ" />
-    <meta property="og:image"       content="/okusuri-timer/icon-512.png" />
+    <meta property="og:image"       content="/icon-512.png" />
 
-    <script type="module" crossorigin src="/okusuri-timer/assets/index-BEAPkszg.js"></script>
-    <link rel="stylesheet" crossorigin href="/okusuri-timer/assets/index-Duk9Klck.css">
+    <script type="module" crossorigin src="/assets/index-DRHCAaI2.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-C9uONFp0.css">
+    <script type="module">import'data:text/javascript,if(!import.meta.resolve)throw Error("import.meta.resolve not supported")';import.meta.url;import("_").catch(()=>1);(async function*(){})().next();window.__vite_is_modern_browser=true</script>
+    <script type="module">!function(){if(window.__vite_is_modern_browser)return;console.warn("vite: loading legacy chunks, syntax error above and the same error below should be ignored");var e=document.getElementById("vite-legacy-polyfill"),n=document.createElement("script");n.src=e.src,n.onload=function(){System.import(document.getElementById('vite-legacy-entry').getAttribute('data-src'))},document.body.appendChild(n)}();</script>
   </head>
   <body>
     <div id="root"></div>
+    <script nomodule>!function(){var e=document,t=e.createElement("script");if(!("noModule"in t)&&"onbeforeload"in t){var n=!1;e.addEventListener("beforeload",(function(e){if(e.target===t)n=!0;else if(!e.target.hasAttribute("nomodule")||!n)return;e.preventDefault()}),!0),t.type="module",t.src=".",e.head.appendChild(t),t.remove()}}();</script>
+    <script nomodule crossorigin id="vite-legacy-polyfill" src="/assets/polyfills-legacy-ZNep8gUe.js"></script>
+    <script nomodule crossorigin id="vite-legacy-entry" data-src="/assets/index-legacy-DoZ_3j5c.js">System.import(document.getElementById('vite-legacy-entry').getAttribute('data-src'))</script>
   </body>
 </html>

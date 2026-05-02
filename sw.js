@@ -1,11 +1,16 @@
-const CACHE_NAME = 'okusuri-timer-v1'
+const CACHE_NAME = 'okusuri-timer-v3'
 
 self.addEventListener('install', (e) => {
   self.skipWaiting()
 })
 
 self.addEventListener('activate', (e) => {
-  e.waitUntil(self.clients.claim())
+  // 古いキャッシュを全部削除
+  e.waitUntil(
+    caches.keys().then((keys) =>
+      Promise.all(keys.filter(k => k !== CACHE_NAME).map(k => caches.delete(k)))
+    ).then(() => self.clients.claim())
+  )
 })
 
 // 通知クリック → アプリをフォーカス or 開く
