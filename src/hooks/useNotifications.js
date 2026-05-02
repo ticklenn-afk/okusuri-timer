@@ -84,8 +84,8 @@ export function useNotifications({ onPopup }) {
 
   const requestPermission = useCallback(async () => {
     if (!('Notification' in window)) return 'unsupported'
-    if (Notification.permission === 'granted') return 'granted'
-    const result = await Notification.requestPermission()
+    if (window.Notification.permission === 'granted') return 'granted'
+    const result = await window.Notification.requestPermission()
     return result
   }, [])
 
@@ -105,7 +105,7 @@ export function useNotifications({ onPopup }) {
         onPopup?.({ timingId: slot.timingId, title, body, label: slot.label })
 
         // ② ブラウザ通知（SW 経由）
-        if (Notification.permission === 'granted' && swRegRef.current) {
+        if (window.Notification?.permission === 'granted' && swRegRef.current) {
           swRegRef.current.active?.postMessage({
             type: 'SHOW_NOTIFICATION',
             payload: { title, body, tag: `okusuri-${slot.timingId}` },
