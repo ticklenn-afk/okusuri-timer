@@ -1234,7 +1234,7 @@ export default function App() {
   const [popup,           setPopup]           = useState(null)
   const [showMedSelect,   setShowMedSelect]   = useState(false)
   const [notifEnabled,    setNotifEnabled]    = useState(() => loadLS('okusuri_notif_enabled', false))
-  const [notifPermission, setNotifPermission] = useState(Notification?.permission ?? 'default')
+  const [notifPermission, setNotifPermission] = useState(window.Notification?.permission ?? 'default')
   const [schedules,       setSchedules]       = useState(() => loadLS('okusuri_schedules', NOTIFICATION_SCHEDULE))
 
   const handlePopup = useCallback((data) => setPopup(data), [])
