@@ -66,6 +66,9 @@ html  { height: -webkit-fill-available; }
 #root {
   min-height: 100svh;
   min-height: -webkit-fill-available;
+  max-width: 430px;
+  margin: 0 auto;
+  position: relative;
 }
 
 /* スクロールバー非表示 */
