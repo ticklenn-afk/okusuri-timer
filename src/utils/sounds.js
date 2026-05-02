@@ -5,7 +5,7 @@
 
 let ctx = null
 
-// iOS Safari/PWA: タッチのたびにAudioContextを解除しておく
+// iOS Safari/PWA: タッチのたびにAudioContextをアンロック（同期）
 function unlockAudio() {
   if (!ctx) ctx = new (window.AudioContext || window.webkitAudioContext)()
   if (ctx.state === 'suspended') ctx.resume()
@@ -16,9 +16,9 @@ if (typeof document !== 'undefined') {
   document.addEventListener('click',      unlockAudio, { passive: true })
 }
 
-async function getCtx() {
+function getCtx() {
   if (!ctx) ctx = new (window.AudioContext || window.webkitAudioContext)()
-  if (ctx.state === 'suspended') await ctx.resume()
+  if (ctx.state === 'suspended') ctx.resume()
   return ctx
 }
 
@@ -40,9 +40,9 @@ function note(freq, startAt, duration, vol = 0.28, type = 'sine', ctx) {
 // ──────────────────────────────────────────
 // ✨ きらーん（服薬完了・メインお祝い）
 // ──────────────────────────────────────────
-export async function playKiran() {
+export function playKiran() {
   try {
-    const c = await getCtx()
+    const c = getCtx()
     const t = c.currentTime
     // 上昇アルペジオ C5 → E5 → G5 → C6 → E6
     const freqs = [523, 659, 784, 1047, 1319]
@@ -56,9 +56,9 @@ export async function playKiran() {
 // ──────────────────────────────────────────
 // 🔔 しりーん（スケジュールボタンタップ）
 // ──────────────────────────────────────────
-export async function playShirin() {
+export function playShirin() {
   try {
-    const c = await getCtx()
+    const c = getCtx()
     const t = c.currentTime
     // ベル2音
     note(1047, t,       0.45, 0.22, 'sine', c)
@@ -72,9 +72,9 @@ export async function playShirin() {
 // ──────────────────────────────────────────
 // 🌟 きらきらーん（全部記録したとき）
 // ──────────────────────────────────────────
-export async function playKiraKiran() {
+export function playKiraKiran() {
   try {
-    const c = await getCtx()
+    const c = getCtx()
     const t = c.currentTime
     const freqs = [523, 659, 784, 1047, 1319, 1568, 2093]
     freqs.forEach((f, i) => note(f, t + i * 0.07, 0.6, 0.22, 'sine', c))
@@ -86,9 +86,9 @@ export async function playKiraKiran() {
 // ──────────────────────────────────────────
 // 🎭 キャラタブ専用サウンド（キャラごとに個性）
 // ──────────────────────────────────────────
-export async function playCharSound(id) {
+export function playCharSound(id) {
   try {
-    const c = await getCtx()
+    const c = getCtx()
     const t = c.currentTime
     if (id === 'morning') {
       // 🦁 りょう学長 → ぴきーん！元気よく上昇ファンファーレ
@@ -143,9 +143,9 @@ export async function playCharSound(id) {
 // ──────────────────────────────────────────
 // 🎺 ファンファーレ（全部飲んだで！）
 // ──────────────────────────────────────────
-export async function playFanfare() {
+export function playFanfare() {
   try {
-    const c = await getCtx()
+    const c = getCtx()
     const t = c.currentTime
 
     // === 第1波: ファンファーレ上昇アルペジオ ===
@@ -178,9 +178,9 @@ export async function playFanfare() {
 // ──────────────────────────────────────────
 // 💊 シュワーン！（今すぐ服薬を記録するボタン）
 // ──────────────────────────────────────────
-export async function playPowan() {
+export function playPowan() {
   try {
-    const c = await getCtx()
+    const c = getCtx()
     const t = c.currentTime
 
     // === ① 低音インパクト「ドン！」 ===
