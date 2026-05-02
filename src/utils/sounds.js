@@ -4,12 +4,23 @@
  */
 
 let ctx = null
+let unlocked = false
 
-// iOS Safari/PWA: タッチのたびにAudioContextをアンロック（同期）
+// iOS Safari/PWA: 最初のタッチでサイレント再生してAudioContextを完全にアンロック
 function unlockAudio() {
-  if (!ctx) ctx = new (window.AudioContext || window.webkitAudioContext)()
-  if (ctx.state === 'suspended') ctx.resume()
+  if (unlocked) return
+  const AC = window.AudioContext || window.webkitAudioContext
+  if (!AC) return
+  if (!ctx) ctx = new AC()
+  // 無音バッファを再生してiOSのオーディオ制限を解除
+  const buf = ctx.createBuffer(1, 1, 22050)
+  const src = ctx.createBufferSource()
+  src.buffer = buf
+  src.connect(ctx.destination)
+  src.start(0)
+  ctx.resume().then(() => { unlocked = true })
 }
+
 if (typeof document !== 'undefined') {
   document.addEventListener('touchstart', unlockAudio, { passive: true })
   document.addEventListener('touchend',   unlockAudio, { passive: true })
@@ -17,7 +28,8 @@ if (typeof document !== 'undefined') {
 }
 
 function getCtx() {
-  if (!ctx) ctx = new (window.AudioContext || window.webkitAudioContext)()
+  const AC = window.AudioContext || window.webkitAudioContext
+  if (!ctx) ctx = new AC()
   if (ctx.state === 'suspended') ctx.resume()
   return ctx
 }
