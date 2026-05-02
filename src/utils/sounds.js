@@ -137,20 +137,7 @@ export function playFanfare() {
     const c = getCtx()
     const t = c.currentTime
 
-    // === 第1波: ドドドド…低音ロール ===
-    for (let i = 0; i < 10; i++) {
-      const osc  = c.createOscillator()
-      const gain = c.createGain()
-      osc.connect(gain); gain.connect(c.destination)
-      osc.type = 'sine'
-      osc.frequency.value = 80 + i * 10
-      const st = t + i * 0.020
-      gain.gain.setValueAtTime(0.30, st)
-      gain.gain.exponentialRampToValueAtTime(0.0001, st + 0.15)
-      osc.start(st); osc.stop(st + 0.18)
-    }
-
-    // === 第2波: ファンファーレ上昇アルペジオ ===
+    // === 第1波: ファンファーレ上昇アルペジオ ===
     const fanfare = [523, 659, 784, 1047, 1319, 1568, 2093]
     fanfare.forEach((f, i) => note(f, t + 0.10 + i * 0.085, 0.55, 0.24, 'sine', c))
 
